@@ -1,0 +1,40 @@
+version: '2'
+services:
+  # Fusio container
+  fusio:
+    image: fusio/fusio:V1.5.0
+    environment:
+      FUSIO_PROJECT_KEY: "42eec18ffdbffc9fda6110dcc705d6ce"
+      FUSIO_HOST: "acme.com"
+      FUSIO_ENV: "prod"
+      FUSIO_DB_NAME: "fusio"
+      FUSIO_DB_USER: "fusio"
+      FUSIO_DB_PW: "61ad6c605975"
+      FUSIO_DB_HOST: "mysql_fusio"
+      FUSIO_BACKEND_USER: "admin"
+      FUSIO_BACKEND_EMAIL: "demo@fusio-project.org"
+      FUSIO_BACKEND_PW: "123456"
+      FUSIO_VERSION: "master"
+      PROVIDER_FACEBOOK_KEY: ""
+      PROVIDER_FACEBOOK_SECRET: ""
+      PROVIDER_GOOGLE_KEY: ""
+      PROVIDER_GOOGLE_SECRET: ""
+      PROVIDER_GITHUB_KEY: ""
+      PROVIDER_GITHUB_SECRET: ""
+      RECAPTCHA_KEY: ""
+      RECAPTCHA_SECRET: ""
+    links:
+      - mysql_fusio
+    ports:
+      - "3300:8080"
+
+  # Fusio system database
+  mysql_fusio:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "7f3e5186032a"
+      MYSQL_USER: "fusio"
+      MYSQL_PASSWORD: "61ad6c605975"
+      MYSQL_DATABASE: "fusio"
+    volumes:
+      - ./db/fusio:/var/lib/mysql
