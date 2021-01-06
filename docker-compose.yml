@@ -13,7 +13,7 @@ services:
       FUSIO_DB_HOST: "mysql_fusio"
       FUSIO_BACKEND_USER: "admin"
       FUSIO_BACKEND_EMAIL: "demo@fusio-project.org"
-      FUSIO_BACKEND_PW: "123456"
+      FUSIO_BACKEND_PW: "qwer@1234"
       FUSIO_VERSION: "master"
       PROVIDER_FACEBOOK_KEY: ""
       PROVIDER_FACEBOOK_SECRET: ""
