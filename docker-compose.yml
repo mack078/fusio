@@ -2,7 +2,7 @@ version: '2'
 services:
   # Fusio container
   fusio:
-    image: fusio/fusio:V1.5.0
+    image: fusio/fusio:v1.5.0
     environment:
       FUSIO_PROJECT_KEY: "42eec18ffdbffc9fda6110dcc705d6ce"
       FUSIO_HOST: "acme.com"
